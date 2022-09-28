@@ -1,0 +1,12 @@
+FROM apstech/treina:latest
+
+COPY ./app /var/www/app/
+
+WORKDIR /var/www/app/
+
+COPY ./app.conf /etc/apache2/sites-enabled/app.conf
+
+EXPOSE 80 443
+
+# By default, simply start apache.
+CMD ["/sbin/entrypoint.sh"]
